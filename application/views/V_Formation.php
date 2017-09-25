@@ -12,7 +12,7 @@
         foreach ($LesFormations as $formation)
             {
         ?>
-        <a href="V_Formation.php/CtrlAcceuil/<?php echo $formation->numeroActivite; ?>"><br> <?php echo $formation->intitule ; ?></a>
+        <a href= "<?php? echo base_url();?>index.php/CtrlAcceuil/afficherLesAgents/<?php echo $formation->numeroActivite; ?>"><br> <?php echo $formation->intitule ; ?></a>
          <?php   
         }
         ?>

@@ -11,14 +11,10 @@
  *
  * @author user
  */
-class Model_Activiter extends CI_Model {
-    public function getAllActiviter() 
+class Model_Activiter extends CI_Controller {
+    public function GetAllActiviter() 
             {
-                $sql = $this->db->get('activite');
-                foreach ($sql->result() as $row)
-                    {
-                        $data[] = $row;
-                    }
-                    return $data;
+                $sql = $this->db->query(" select * from activite ");
+                return $sql->result();
             }
 }

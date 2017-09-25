@@ -12,7 +12,7 @@
         foreach ($LesAtiviters as $activite)
             {
         ?>
-        <a href="V_Activiter.php/CrtlAcceuil/<?php echo $activite->numero; ?>" > <br><?php echo $activite->libelle ; ?></a>
+        <a href="index.php/CtrlAcceuil/afficherLesFormations/<?php echo $activite->numero; ?>" > <br><?php echo $activite->libelle ; ?></a>
          <?php   
         }
         ?>

@@ -13,7 +13,7 @@
         foreach ($LesAgents as $agent)
             {
         ?>
-        <a href="V_Agent.php/CtrlAcceuil/afficherLesAgents<?php echo $agent->code; ?>" ><br>  <?php echo $agent->prenom ; ?><?php echo $agent->nom ; ?></a>
+        <p><?php echo $agent->nom; ?>" ><br>  <?php echo $agent->prenom ; ?>></p>
          <?php   
         }
         ?>

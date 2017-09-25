@@ -12,13 +12,9 @@
  * @author user
  */
 class Model_Formation extends CI_Model {
-     public function getAllFormation()
+     public function GetAllFormation($numero)
              {
-                $sql = $this->db->get('formation');
-                foreach ($sql->result() as $row)
-                    {
-                        $data[] = $row;
-                    }
-                    return $data;
+                $sql = $this->db->query("select * from formation where numeroActivite=".$numero);
+                return $sql->result();
              }
 }

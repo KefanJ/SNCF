@@ -13,37 +13,27 @@
  */
 class CtrlAcceuil extends CI_Controller {
     public function index()
-            {
+            { $data['titre'] = 'Les activités';
                 $this->load->model('Model_Activiter');
-                $data['titre'] = 'Les activités';
-                  $data['LesAtiviters'] = $this->Model_Activiter->getAllActiviter();
+                  $data['LesAtiviters'] = $this->Model_Activiter->GetAllActiviter();
                       $this->load->view('V_Activiter',$data); 
-                   
-                $this->load->model('Model_Formation');
-                $data['titre'] = 'Les formations';
-                  $data['LesFormations'] = $this->Model_Formation->getAllFormation(); 
-                      $this->load->view('V_Formation',$data); 
-                      
-                      $this->load->model('Model_Agent');
-                $data['titre'] = 'Les agents';
-                  $data['LesAgents'] = $this->Model_Agent->getAllAgent(); 
-                      $this->load->view('V_Agent',$data); 
+               
             }
       public function afficherLesFormations()
             {
-                $lol = $this->uri->segments(3);
+                $numero = $this->uri->segment(3);
                 $this->load->model('Model_Formation');
-                $data['titre'] = 'Les formations';
-                  $data['LesFormations'] = $this->Model_Formation->getAllFormation($lol); 
+                
+                  $data['LesFormations'] = $this->Model_Formation->GetAllFormation( $numero); 
                       $this->load->view('V_Formation',$data); 
                   
             }  
             public function afficherLesAgents()
             {
-                $lol = $this->uri->segments(4);
+                $lAgent = $this->uri->segment(4);
                 $this->load->model('Model_Agent');
                 $data['titre'] = 'Les agents';
-                  $data['LesAgents'] = $this->Model_Formation->getAllAgent($lol); 
+                  $data['LesAgents'] = $this->Model_Formation->GetAllAgent($lAgent); 
                       $this->load->view('V_Agent',$data); 
                   
             }     
