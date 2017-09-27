@@ -13,7 +13,8 @@
         foreach ($LesAgents as $agent)
             {
         ?>
-        <p><?php echo $agent->nom; ?>" ><br>  <?php echo $agent->prenom ; ?>></p>
+        <p><?php echo $agent->nom . " - ". $agent->prenom; ?> </p>
+        
          <?php   
         }
         ?>
